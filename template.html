@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html>
+    <body id="body">
+        <!-- SECOND PAGE -->
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            // const greetingValue = urlParams.get('greeting');
+            // console.log(greetingValue);  
+
+            window.onload = function() {
+            cols = new Array("WT", "TC", "ET", "NET", "ED", "DSC")
+            //when the document is finished loading, replace everything
+            //between the <a ...> </a> tags with the value of splitText
+            document.getElementById("sid").innerHTML=urlParams.get('sid');
+            document.getElementById("id").innerHTML=urlParams.get('id');
+            
+            for (let i = 0; i < cols.length; i++){
+                document.getElementById(cols[i]).innerHTML=urlParams.get(cols[i]);
+                }
+            }
+        </script>
+
+        <style>
+           table{
+            border:1px solid #C0C0C0;
+            border-collapse:collapse;
+            padding:5px;
+            }
+            th{
+                border:1px solid #C0C0C0;
+                padding:5px;
+                background:#F0F0F0;
+            }
+            td{
+                border:1px solid #C0C0C0;
+                padding:5px;
+            }
+        </style>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject ID</th>
+                        <th>ID</th>
+                        <!-- <th>Dice WT</th>
+                        <th>Dice TC</th> 
+                        <th>Dice ET</th>
+                        <th>Dice NET/NCR</th>
+                        <th>Dice ED</th> -->
+                        <th>Dice ALL [Pred / True] </th>
+                        <th>Colorbar</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td id="sid">BraTS2021_0</td>
+                    <td id="id"></td>
+                    <!-- <td id="WT">0.95/0.94</td>
+                    <td id="TC">0.95 / 0.94</td> 
+                    <td id="ET">0.95 / 0.94</td>
+                    <td id="NET">0.95 / 0.94</td>
+                    <td id="ED">0.95 / 0.94</td> -->
+                    <td id="DSC">0.95 / 0.94</td>
+                    <td id="colorbar"><p style="background-color:#FF0000;">NET/NCR</p><p style="background-color:#FDDA0D;">Enhancing</p><p style="background-color:#00FF00;">Edema</p></td> 
+                </tr>
+
+            </tbody>
+            </table> 
+            <br/>
+            <br/>
+            <br/>
+            <script src="./script.js"></script>  
+    </body>
+    </html>
